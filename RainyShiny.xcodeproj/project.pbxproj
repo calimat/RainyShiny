@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2B674A55725FB44E41C07D7 /* Pods_RainyShiny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7D066E2BA1F7377A05F8C9 /* Pods_RainyShiny.framework */; };
 		F6D9DFE71EE78C9F00F9D4BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9DFE61EE78C9F00F9D4BD /* AppDelegate.swift */; };
 		F6D9DFE91EE78C9F00F9D4BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9DFE81EE78C9F00F9D4BD /* ViewController.swift */; };
 		F6D9DFEC1EE78C9F00F9D4BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6D9DFEA1EE78C9F00F9D4BD /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E7D066E2BA1F7377A05F8C9 /* Pods_RainyShiny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RainyShiny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		350A1B6D07EC87D23393EA7E /* Pods-RainyShiny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RainyShiny.release.xcconfig"; path = "Pods/Target Support Files/Pods-RainyShiny/Pods-RainyShiny.release.xcconfig"; sourceTree = "<group>"; };
+		39A2A016BEBE52846103D934 /* Pods-RainyShiny.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RainyShiny.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RainyShiny/Pods-RainyShiny.debug.xcconfig"; sourceTree = "<group>"; };
 		F6D9DFE31EE78C9F00F9D4BD /* RainyShiny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RainyShiny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D9DFE61EE78C9F00F9D4BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6D9DFE81EE78C9F00F9D4BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B674A55725FB44E41C07D7 /* Pods_RainyShiny.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		237EACAF2F1046CCD5D23E48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E7D066E2BA1F7377A05F8C9 /* Pods_RainyShiny.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE2E75D679D01A68968F39B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				39A2A016BEBE52846103D934 /* Pods-RainyShiny.debug.xcconfig */,
+				350A1B6D07EC87D23393EA7E /* Pods-RainyShiny.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F6D9DFDA1EE78C9F00F9D4BD = {
 			isa = PBXGroup;
 			children = (
 				F6D9DFE51EE78C9F00F9D4BD /* RainyShiny */,
 				F6D9DFE41EE78C9F00F9D4BD /* Products */,
+				AE2E75D679D01A68968F39B5 /* Pods */,
+				237EACAF2F1046CCD5D23E48 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6D9DFF51EE78C9F00F9D4BD /* Build configuration list for PBXNativeTarget "RainyShiny" */;
 			buildPhases = (
+				151FD9E8313114E3908850DF /* [CP] Check Pods Manifest.lock */,
 				F6D9DFDF1EE78C9F00F9D4BD /* Sources */,
 				F6D9DFE01EE78C9F00F9D4BD /* Frameworks */,
 				F6D9DFE11EE78C9F00F9D4BD /* Resources */,
+				32B26F62F1623B21D42758AB /* [CP] Embed Pods Frameworks */,
+				67A4A2AC41F768C436E92ED6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		151FD9E8313114E3908850DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		32B26F62F1623B21D42758AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RainyShiny/Pods-RainyShiny-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67A4A2AC41F768C436E92ED6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RainyShiny/Pods-RainyShiny-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F6D9DFDF1EE78C9F00F9D4BD /* Sources */ = {
@@ -261,6 +336,7 @@
 		};
 		F6D9DFF61EE78C9F00F9D4BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39A2A016BEBE52846103D934 /* Pods-RainyShiny.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AMLYNCKP6M;
@@ -275,6 +351,7 @@
 		};
 		F6D9DFF71EE78C9F00F9D4BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 350A1B6D07EC87D23393EA7E /* Pods-RainyShiny.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AMLYNCKP6M;

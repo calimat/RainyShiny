@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WeatherVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RainyShiny" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WeatherVC" customModule="RainyShiny" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -168,6 +168,14 @@
                             <constraint firstAttribute="trailing" secondItem="9Vg-ET-5il" secondAttribute="trailing" id="xFi-dX-L2J"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentTempLabel" destination="PkT-Jn-zIe" id="Jaa-C4-HVc"/>
+                        <outlet property="currentWeatherImage" destination="79B-D2-pu5" id="Jdh-0U-DjA"/>
+                        <outlet property="currentWeatherTypeLabel" destination="bkw-do-8QE" id="UvR-Ld-2Ic"/>
+                        <outlet property="dateLabel" destination="8Su-b7-iDN" id="pim-9U-euE"/>
+                        <outlet property="locationLabel" destination="Sy6-Kb-pma" id="a3b-2g-Sso"/>
+                        <outlet property="tableView" destination="6cL-m7-RBh" id="KE0-rR-vYF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

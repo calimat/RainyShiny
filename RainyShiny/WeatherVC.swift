@@ -34,6 +34,8 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.estimatedRowHeight = 30
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        print(CURRENT_WEATHER_URL)
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

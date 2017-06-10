@@ -174,7 +174,7 @@
                         <outlet property="currentWeatherTypeLabel" destination="bkw-do-8QE" id="UvR-Ld-2Ic"/>
                         <outlet property="dateLabel" destination="8Su-b7-iDN" id="pim-9U-euE"/>
                         <outlet property="locationLabel" destination="Sy6-Kb-pma" id="a3b-2g-Sso"/>
-                        <outlet property="tableView" destination="6cL-m7-RBh" id="KE0-rR-vYF"/>
+                        <outlet property="tableView" destination="r9t-3u-CHF" id="Que-ss-dsL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

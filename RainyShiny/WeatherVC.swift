@@ -22,9 +22,8 @@ class WeatherVC: UIViewController {
     
     @IBOutlet weak var currentWeatherTypeLabel: UILabel!
     
-    
-    
-    @IBOutlet weak var tableView: UITableViewCell!
+
+    @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {

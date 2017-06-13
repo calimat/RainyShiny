@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
@@ -26,6 +27,8 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     
+    var currentWather = CurrentWeather()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -34,7 +37,9 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.estimatedRowHeight = 30
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        print(CURRENT_WEATHER_URL)
+        currentWather.downloadWeatherDetails {
+            //Setup UI to load downloaded data
+        }
         
     }
     

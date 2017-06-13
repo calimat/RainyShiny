@@ -27,7 +27,9 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     
-    var currentWather = CurrentWeather()
+    var currentWeather = CurrentWeather()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +39,10 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.estimatedRowHeight = 30
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        currentWather.downloadWeatherDetails {
+        currentWeather.downloadWeatherDetails {
             //Setup UI to load downloaded data
+            self.updateMainUI()
+            
         }
         
     }
@@ -58,6 +62,13 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
 
+    func updateMainUI() {
+        dateLabel.text = currentWeather.date
+        currentTempLabel.text = "\(currentWeather.currentTemp)"
+        currentWeatherTypeLabel.text = currentWeather.weatherType
+        locationLabel.text = currentWeather.cityName
+        currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
+    }
 
 }
 

@@ -17,7 +17,7 @@ class Forecast {
     var _lowTemp : String!
     
     var date :String {
-    
+        
         if _date == nil {
             _date = ""
         }
@@ -45,5 +45,55 @@ class Forecast {
         }
         return _lowTemp
     }
+    
+    init(weatherDict: Dictionary<String,Any>) {
+        
+        if let temp = weatherDict["temp"] as? Dictionary<String,Any> {
+            if let min = temp["min"] as? Double {
+                
+                let kelvinToFarenheitPreDivision = (min * (9/5) - 459.67)
+                
+                let kelvinToFarenheit = Double(round(10 * kelvinToFarenheitPreDivision)/10)
+                
+                self._lowTemp = "\(kelvinToFarenheit)"
+                // print(self._currentTemp)
+                
+                
+            }
+            
+            if let max = temp["max"] as? Double {
+                
+                let kelvinToFarenheitPreDivision = (max * (9/5) - 459.67)
+                
+                let kelvinToFarenheit = Double(round(10 * kelvinToFarenheitPreDivision)/10)
+                
+                self._highTemp = "\(kelvinToFarenheit)"
+                
+            }
+        }
+        
+        if let weather = weatherDict["weather"] as? [Dictionary<String,Any>] {
+            
+            if let main = weather[0]["main"] as? String {
+                self._weatherType = main
+            }
+        }
+        
+    }
+    
 }
+
+extension Date {
+    func dayOfThWeek() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        return dateFormatter.string(from: self)
+        
+    }
+}
+
+
+
+
+
 

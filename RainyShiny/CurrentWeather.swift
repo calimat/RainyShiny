@@ -80,7 +80,7 @@ class CurrentWeather {
                         let kelvinToFarenheit = Double(round(10 * kelvinToFarenheitPreDivision)/10)
                         
                         self._currentTemp = kelvinToFarenheit
-                        print(self._currentTemp)
+                       // print(self._currentTemp)
                     }
                 }
             }

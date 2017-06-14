@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 
 class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -26,8 +26,10 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
-    
+    var forecast: Forecast!
+    var forecasts = [Forecast]()
     var currentWeather = CurrentWeather()
+    
     
     
     
@@ -38,6 +40,9 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableView.estimatedRowHeight = 30
         tableView.rowHeight = UITableViewAutomaticDimension
+        forecast = Forecast()
+        
+        
         
         currentWeather.downloadWeatherDetails {
             //Setup UI to load downloaded data
@@ -45,6 +50,28 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
         }
         
+    }
+    
+    func downloadForecastData(completed:DownloadComplete) {
+        //Downloading forecast weather data for Tableview
+        let forecastURL = URL(string: FORECAST_URL)!
+        Alamofire.request(forecastURL).responseJSON { response in
+        let result = response.result
+            
+            if let dict = result.value as? Dictionary<String, Any> {
+                
+                if let list = dict["list"] as? [Dictionary<String,Any>] {
+                    
+                    for obj in list {
+                        let forecast = Forecast(weatherDict: obj)
+                        self.forecasts.append(forecast)
+                    }
+                    
+                }
+            }
+            
+            
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

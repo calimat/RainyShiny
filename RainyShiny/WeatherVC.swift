@@ -40,19 +40,20 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableView.estimatedRowHeight = 30
         tableView.rowHeight = UITableViewAutomaticDimension
-        forecast = Forecast()
+        
         
         
         
         currentWeather.downloadWeatherDetails {
-            //Setup UI to load downloaded data
-            self.updateMainUI()
+            self.downloadForecastData {
+                self.updateMainUI()
+            }
             
         }
         
     }
     
-    func downloadForecastData(completed:DownloadComplete) {
+    func downloadForecastData(completed:@escaping DownloadComplete) {
         //Downloading forecast weather data for Tableview
         let forecastURL = URL(string: FORECAST_URL)!
         Alamofire.request(forecastURL).responseJSON { response in
@@ -65,12 +66,12 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     for obj in list {
                         let forecast = Forecast(weatherDict: obj)
                         self.forecasts.append(forecast)
+                        print(obj)
                     }
                     
                 }
             }
-            
-            
+            completed()
         }
     }
     

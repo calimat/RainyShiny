@@ -83,7 +83,7 @@
                                 <rect key="frame" x="0.0" y="300" width="375" height="367"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="weatherCell" rowHeight="80" id="6cL-m7-RBh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="weatherCell" rowHeight="80" id="6cL-m7-RBh" customClass="WeatherCell" customModule="RainyShiny" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6cL-m7-RBh" id="84Z-7F-eSd">
@@ -149,6 +149,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="dayLabel" destination="erZ-Qi-V8J" id="o6M-1W-353"/>
+                                            <outlet property="highTemp" destination="fiK-vd-RW9" id="fzz-uX-gD6"/>
+                                            <outlet property="lowTemp" destination="ZGl-eb-woO" id="FVu-3J-0Mv"/>
+                                            <outlet property="weatherIcon" destination="aFK-lM-oMP" id="GWX-FR-835"/>
+                                            <outlet property="weatherType" destination="X7g-r6-qlm" id="p0W-ko-khy"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

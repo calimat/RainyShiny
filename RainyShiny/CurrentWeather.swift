@@ -77,7 +77,12 @@ class CurrentWeather {
                         
                         let kelvinToFarenheitPreDivision = (currentTemperature * (9/5) - 459.67)
                         
+                        
+                        
                         let kelvinToFarenheit = Double(round(10 * kelvinToFarenheitPreDivision)/10)
+                        
+                        
+                       // let FarenheitToCelsius = Double(round( (kelvinToFarenheit - 32) * (5/9)))
                         
                         self._currentTemp = kelvinToFarenheit
                        // print(self._currentTemp)

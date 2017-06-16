@@ -45,6 +45,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
+        locationManager.startMonitoringSignificantLocationChanges()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -60,6 +61,17 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                 self.updateMainUI()
             }
             
+        }
+        
+    }
+    
+    func locationAuthStatus() {
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            
+            currentLocation = locationManager.location 
+            
+        } else {
+            locationManager.requestWhenInUseAuthorization()
         }
         
     }

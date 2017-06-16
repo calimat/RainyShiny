@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreLocation
 import Alamofire
 
-class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
 
     
     
@@ -25,6 +27,10 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    let locationManager = CLLocationManager()
+    var currentLocation: CLLocation!
     
     var forecast: Forecast!
     var forecasts = [Forecast]()

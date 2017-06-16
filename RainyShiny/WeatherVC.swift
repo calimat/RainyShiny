@@ -41,6 +41,11 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        
         tableView.delegate = self
         tableView.dataSource = self
         

@@ -16,5 +16,4 @@ class Location {
     var longitude:Double!
     
     
-    
 }
